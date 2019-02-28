@@ -5,8 +5,8 @@
    Tutorial 10
    Case Problem 3
 
-   Author:  
-   Date:   
+   Author: Nicholas Le 
+   Date: 02/27/19  
    
    Filename: ah_report.js
    
@@ -38,26 +38,25 @@
 
 
 function calcSum(donorAmt) {
-   donationTotal += donorAmt[9];
+      donationTotal += donorAmt[9];
 }
 
 function findMajorDonors(donorAmt) {
-   return donorAmt[9] >= 1000;
+      return donorAmt[9] >= 1000;
 }
 
 function donorSortDescending(a, b) {
-   return b[9] - a[9];
+      return b[9] - a[9];
 }
 
 function writeDonorRow(value) {
-   donorTable += "<tr>";
-   donorTable += "<td>$" + value[9].toLocaleString() + "</td>";   
-   donorTable += "<td>" + value[0] + "</td>";
-   donorTable += "<td>" + value[10] + "</td>";   
-   donorTable += "<td>" + value[2] + ", " + value[1] + "</td>";  
-   donorTable += "<td>" + value[3] + "<br />" + value[4] + ", " + value[5] + " " + value[6]  + "</td>";    
-   donorTable += "<td>" + value[7] + "</td>";   
-   donorTable += "<td>" + value[8] + "</td>";         
-   donorTable += "</tr>";
+      donorTable += "<tr>";
+      donorTable += "<td>$" + value[9].toLocaleString() + "</td>";
+      donorTable += "<td>" + value[0] + "</td>";
+      donorTable += "<td>" + value[10] + "</td>";
+      donorTable += "<td>" + value[2] + ", " + value[1] + "</td>";
+      donorTable += "<td>" + value[3] + "<br />" + value[4] + ", " + value[5] + " " + value[6] + "</td>";
+      donorTable += "<td>" + value[7] + "</td>";
+      donorTable += "<td>" + value[8] + "</td>";
+      donorTable += "</tr>";
 }
-
