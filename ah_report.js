@@ -60,3 +60,11 @@ function writeDonorRow(value) {
       donorTable += "<td>" + value[8] + "</td>";
       donorTable += "</tr>";
 }
+
+//Author JS
+var donationTotal = 0;
+donors[i].forEach(calcSum());
+
+//Adds the html table into the browser
+var summaryTable = "<table> <tr><th>" + Donors + "</th><td>" + donors + "</td></tr> <tr><th>Total Donations</th><td>$" + toLocaleString(donationTotal) + "</td></tr></table>";
+document.getElementById("donationSummary").innerHTML = summaryTable;
