@@ -62,9 +62,22 @@ function writeDonorRow(value) {
 }
 
 //Author JS
+//Arrays
 var donationTotal = 0;
-donors[i].forEach(calcSum());
+donors.forEach(calcSum);
+var majorDonors = [];
 
 //Adds the html table into the browser
-var summaryTable = "<table> <tr><th>" + Donors + "</th><td>" + donors + "</td></tr> <tr><th>Total Donations</th><td>$" + toLocaleString(donationTotal) + "</td></tr></table>";
+var summaryTable = "<table> <tr><th> Donors </th><td>" + donors.length + "</td></tr> <tr><th>Total Donations</th><td>$" + donationTotal.toLocaleString() + "</td></tr></table>";
 document.getElementById("donationSummary").innerHTML = summaryTable;
+
+//List of contributors who donated $1000 or more
+donors.filter(findMajorDonors);
+
+majorDonors.sort(donorSortDescending());
+
+//Stores the HTML code for the table of major donors
+var donorTable = "<table> <caption>Major Donors</caption> <tr><th>Donation</th><th>Donor ID</th> <th>Date</th><th>Name</th><th>Address</th> <th>Phone</th><th>E-mail</th></tr>";
+majorDonors.forEach(writeDonorRow);
+donorTable += "</table>";
+document.getElementById("donorTable").innerHTML = donorTable;
